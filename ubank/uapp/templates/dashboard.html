@@ -1,0 +1,72 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block title %}Dashboard | U-APP{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <h1 class="fs-2 fw-medium mt-4">Keuangan rapi, hidup lebih tenang.</h1>
+    <p class="text-secondary">Selamat datang kembali! Yuk, lihat perjalanan keuanganmu hari ini.</p>
+
+    <section class="position-relative bg-primary text-white rounded-4 p-4 mt-4">
+        <small class="text-uppercase">Saldo aktif</small>
+        <strong id="saldo" class="d-block fs-2 fw-medium my-3">Rp 12.850.000</strong>
+        <span>Semua tercatat. Semua dalam kendalimu.</span>
+        <button class="btn text-white bg-white bg-opacity-25 rounded-circle position-absolute top-0 end-0 m-3" aria-label="Sembunyikan saldo">
+            <i class="bi bi-eye"></i>
+        </button>
+    </section>
+
+    <nav class="dashboard-actions d-grid gap-2 gap-md-3 mt-3 text-center">
+        <button class="btn bg-primary bg-opacity-10 py-3 d-flex flex-column align-items-center gap-2" data-kind="in">
+            <i class="bi bi-plus-lg text-primary fs-5"></i>
+            Tambah Pemasukan
+        </button>
+        <button class="btn bg-primary bg-opacity-10 py-3 d-flex flex-column align-items-center gap-2" data-kind="out">
+            <i class="bi bi-dash-lg text-primary fs-5"></i>
+            Tambah Pengeluaran
+        </button>
+        <a class="btn bg-primary bg-opacity-10 py-3 d-flex flex-column align-items-center gap-2" href="#">
+            <i class="bi bi-clock-history text-primary fs-5"></i>
+            Riwayat Transaksi
+        </a>
+        <a class="btn bg-primary bg-opacity-10 py-3 d-flex flex-column align-items-center gap-2" href="#">
+            <i class="bi bi-book text-primary fs-5"></i>
+            Laporan Transaksi
+        </a>
+    </nav>
+
+    <article id="riwayat" class="bg-white rounded-3 p-4 mt-3">
+        <h3 class="h6 fw-semibold">Riwayat Terakhir</h3>
+        <small class="d-block text-secondary my-3">Transaksi terakhir · Oktober 2026</small>
+        <p class="d-flex justify-content-between mb-2">Gaji bulanan <span>+ Rp 15.000.000</span></p>
+    </article>
+</div>
+
+<dialog class="border-0 rounded-4 p-0 m-auto">
+    <form class="p-4">
+        <h3 id="dialog-title" class="h6 mb-3"></h3>
+
+        <label class="form-label w-100 text-secondary">
+            Keterangan
+            <input class="form-control" name="description" maxlength="40" required>
+        </label>
+
+        <label class="form-label w-100 text-secondary">
+            Jumlah (Rp)
+            <input class="form-control" name="amount" inputmode="numeric"
+                   pattern="[1-9][0-9.]*" required>
+        </label>
+
+        <div class="d-flex justify-content-end gap-2 mt-4">
+            <button id="batal" class="btn btn-light" type="button">Batal</button>
+            <button id="simpan" class="btn bg-primary text-white" type="button">Simpan</button>
+        </div>
+    </form>
+</dialog>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/dashboard.js' %}"></script>
+{% endblock %}
