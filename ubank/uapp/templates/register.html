@@ -1,0 +1,44 @@
+
+{% extends "main.html" %}
+{% load static %}
+
+{% block title %}Register - U-Bank{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'uapp/css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card">
+        <h1>U-Bank</h1>
+        <h2>Register</h2>
+        <p class="subtitle">Buat akun baru</p>
+
+        {% if form.errors %}
+            <p class="error">Periksa kembali data yang kamu masukkan.</p>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <label class="show-password">
+                <input type="checkbox" id="showPassword">
+                Tampilkan password
+            </label>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <p class="register-link">
+            Sudah punya akun?
+            <a href="{% url 'login' %}">Login</a>
+        </p>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'uapp/js/app.js' %}" defer></script>
+{% endblock %}
