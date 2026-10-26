@@ -88,3 +88,21 @@ document.addEventListener("DOMContentLoaded", () => {
         form.reset();
     });
 });
+
+
+// Fitur tampilkan/sembunyikan password Login dan Register
+document.addEventListener("DOMContentLoaded", () => {
+    const checkbox = document.querySelector("#showPassword");
+
+    if (!checkbox) return;
+
+    checkbox.addEventListener("change", () => {
+        const passwordInputs = document.querySelectorAll(
+            'input[type="password"], input[data-password-visible="true"], input[name="password"], input[name="password1"], input[name="password2"]'
+        );
+
+        passwordInputs.forEach((input) => {
+            input.type = checkbox.checked ? "text" : "password";
+        });
+    });
+});
