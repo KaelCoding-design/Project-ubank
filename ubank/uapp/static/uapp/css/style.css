@@ -1,20 +1,40 @@
 
 :root {
-    --bs-primary-rgb: 10, 85, 168;
-    --bs-primary: #0a55a8;
-    --bs-body-font-family: "Outfit", sans-serif;
+    --bs-primary-rgb: 34, 69, 130;
+    --bs-primary-bg-subtle: #efe9ff;
+    --bs-primary: #224582;
+    --bs-body-font-family: "Poppins", sans-serif;
     --bs-body-font-size: .85rem;
 }
 
+
+/*Dashboard Styling*/
+.container { max-width: 720px; }
+
+.overlap { margin-top: -3rem; }
+
+.form-control:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 .2rem rgba(var(--bs-primary-rgb), .25);
+}
+
+dialog { width: min(92vw, 380px); }
+
+dialog::backdrop { background: rgba(0, 0, 0, .4); }
+
+.fitur .btn:hover {
+    background-color: rgba(192, 190, 190, 0.4);;
+}
+
 .btn-primary {
-    --bs-btn-bg: #0a55a8;
-    --bs-btn-border-color: #0a55a8;
+    --bs-btn-bg: #224582;
+    --bs-btn-border-color: #224582;
     --bs-btn-hover-bg: #084785;
     --bs-btn-hover-border-color: #084785;
 }
 
-.dashboard-actions {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+.bg-primary {
+    background-color: var(--bs-primary);
 }
 
 @media (max-width: 767.98px) {
@@ -114,7 +134,7 @@ dialog::backdrop {
     padding: 11px;
     border: none;
     border-radius: 8px;
-    background: #0a55a8;
+    background: var(--bs-primary);
     color: white;
     font-weight: 600;
     cursor: pointer;
@@ -136,7 +156,7 @@ dialog::backdrop {
 }
 
 .auth-card a {
-    color: #0a55a8;
+    color: var(--bs-primary);
     font-weight: 500;
 }
 
