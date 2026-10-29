@@ -1,0 +1,73 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block title %}Riwayat | U-Bank{% endblock %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'uapp/css/riwayat.css' %}">
+{% endblock %}
+{% block content %}
+<main class="page-wrap">
+    <h1 class="text-primary">Riwayat Transaksi</h1>
+    <p class="subtitle">Daftar semua transaksi kamu, tersimpan rapi di satu tempat.</p>
+
+    <section class="panel" aria-label="Panel transaksi">
+      <div class="panel-head">
+        <h2 class="panel-title">Transaksi kamu</h2>
+        <span class="count-pill">6 transaksi</span>
+      </div>
+
+      <div class="">
+      <!-- Judul kolom -->
+      <div class="row p-2 bg-primary text-white">
+        <div class="col">TRANSAKSI</div>
+        <div class="col">TANGGAL</div>
+        <div class="col">NOMINAL</div>
+        <div class="col">AKSI</div>
+      </div>
+
+      <!-- Transaksi 1 -->
+      <div class="row p-2 mt-3">
+        <div class="col">
+            <p class="trx-name">Belanja bulanan</p>
+            <p class="trx-category">Kebutuhan sehari-hari</p>
+        </div>
+        <div class="col">28 Okt 2026</div>
+        <div class="col">Rp 500.000</div>
+        <div class="col">
+            <button type="button" class="btn-static btn-edit">Edit</button>
+            <button type="button" class="btn-static btn-delete">Hapus</button>
+        </div>
+      </div>
+      <div class="row p-2 mt-3">
+        <div class="col">
+            <p class="trx-name">Belanja bulanan</p>
+            <p class="trx-category">Kebutuhan sehari-hari</p>
+        </div>
+        <div class="col">28 Okt 2026</div>
+        <div class="col">Rp 500.000</div>
+        <div class="col">
+            <button type="button" class="btn-static btn-edit">Edit</button>
+            <button type="button" class="btn-static btn-delete">Hapus</button>
+        </div>
+      </div>
+      <div class="row p-2 mt-3">
+        <div class="col">
+            <p class="trx-name">Belanja bulanan</p>
+            <p class="trx-category">Kebutuhan sehari-hari</p>
+        </div>
+        <div class="col">28 Okt 2026</div>
+        <div class="col">Rp 500.000</div>
+        <div class="col">
+            <button type="button" class="btn-static btn-edit">Edit</button>
+            <button type="button" class="btn-static btn-delete">Hapus</button>
+        </div>
+      </div>
+
+      <div class="panel-footer">Menampilkan 6 dari 6 transaksi · Data contoh.</div>
+    </section> 
+</main>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'uapp/js/app.js' %}"></script>
+{% endblock %}
