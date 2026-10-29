@@ -4,63 +4,83 @@
 {% block title %}Dashboard | U-Bank{% endblock %}
 
 {% block content %}
-<div class="container py-4">
-    <h1 class="fs-2 fw-medium mt-4">Keuangan rapi, hidup lebih tenang.</h1>
-    <p class="text-secondary">Selamat datang kembali! Yuk, lihat perjalanan keuanganmu hari ini.</p>
+<header class="bg-primary text-white pt-3 pb-5 rounded-bottom-5">
+    <div class="container">
+        <h1 class="fw-bold fs-2 mb-2">Keuangan rapi, hidup lebih tenang.</h1>
+        <p class="text-white-50 mb-4">Selamat datang kembali! Yuk, lihat perjalanan keuanganmu hari ini.</p>
+    </div>
+</header>
 
-    <section class="position-relative bg-primary text-white rounded-4 p-4 mt-4">
-        <small class="text-uppercase">Saldo aktif</small>
-        <strong id="saldo" class="d-block fs-2 fw-medium my-3">Rp 12.850.000</strong>
-        <span>Semua tercatat. Semua dalam kendalimu.</span>
-        <button class="btn text-white bg-white bg-opacity-25 rounded-circle position-absolute top-0 end-0 m-3" aria-label="Sembunyikan saldo">
-            <i class="bi bi-eye"></i>
-        </button>
+<main class="container pb-4">
+ 
+    
+    <section class="card border-0 rounded-4 shadow overlap">
+        <div class="card-body position-relative p-4">
+            <span class="text-secondary">Saldo Aktif</span>
+            <strong id="saldo" class="d-block fs-1 fw-bold my-2">Rp 12.850.000</strong>
+            <span class="text-success fw-medium">Semua tercatat. Semua dalam kendalimu.</span>
+            <button id="toggle-saldo" class="btn bg-primary-subtle text-primary rounded-circle p-2 lh-1 position-absolute top-0 end-0 m-3" aria-label="Sembunyikan saldo">
+                <i class="bi bi-eye fs-5"></i>
+            </button>
+        </div>
     </section>
 
-    <nav class="dashboard-actions d-grid gap-2 gap-md-3 mt-3 text-center">
-        <button class="btn bg-primary bg-opacity-10 py-3 d-flex flex-column align-items-center gap-2" data-kind="in">
-            <i class="bi bi-plus-lg text-primary fs-5"></i>
-            Tambah Pemasukan
-        </button>
-        <button class="btn bg-primary bg-opacity-10 py-3 d-flex flex-column align-items-center gap-2" data-kind="out">
-            <i class="bi bi-dash-lg text-primary fs-5"></i>
-            Tambah Pengeluaran
-        </button>
-        <a class="btn bg-primary bg-opacity-10 py-3 d-flex flex-column align-items-center gap-2" href="riwayat">
-            <i class="bi bi-clock-history text-primary fs-5"></i>
-            Riwayat Transaksi
-        </a>
-        <a class="btn bg-primary bg-opacity-10 py-3 d-flex flex-column align-items-center gap-2" href="laporan">
-            <i class="bi bi-book text-primary fs-5"></i>
-            Laporan Transaksi
-        </a>
+    <nav class="fitur row row-cols-2 row-cols-md-4 g-3 mt-0 text-center" aria-label="Fitur">
+        <div class="col">
+            <button class="btn border-0 shadow rounded-4 w-100 h-100 py-3 d-flex flex-column align-items-center gap-2 small fw-medium" data-dialog data-contoh="Gaji, Honor, atau Keuntungan">
+                <i class="bi bi-plus-lg fs-4 lh-1 bg-success-subtle text-success rounded-4 p-3"></i>
+                Tambah Pemasukan
+            </button>
+        </div>
+        <div class="col">
+            <button class="btn border-0 shadow rounded-4 w-100 h-100 py-3 d-flex flex-column align-items-center gap-2 small fw-medium" data-dialog data-contoh="Jajan, Hiburan, atau Tagihan">
+                <i class="bi bi-dash-lg fs-4 lh-1 bg-danger-subtle text-danger rounded-4 p-3"></i>
+                Tambah Pengeluaran
+            </button>
+        </div>
+        <div class="col">
+            <a class="btn border-0 shadow rounded-4 w-100 h-100 py-3 d-flex flex-column align-items-center gap-2 small fw-medium" href="riwayat">
+                <i class="bi bi-clock-history fs-4 lh-1 bg-primary-subtle text-primary rounded-4 p-3"></i>
+                Riwayat Transaksi
+            </a>
+        </div>
+        <div class="col">
+            <a class="btn border-0 shadow rounded-4 w-100 h-100 py-3 d-flex flex-column align-items-center gap-2 small fw-medium" href="laporan">
+                <i class="bi bi-bar-chart-line fs-4 lh-1 bg-primary-subtle text-primary rounded-4 p-3"></i>
+                Laporan Transaksi
+            </a>
+        </div>
     </nav>
 
-    <article id="riwayat" class="bg-white rounded-3 p-4 mt-3">
-        <h3 class="h6 fw-semibold">Riwayat Terakhir</h3>
-        <small class="d-block text-secondary my-3">Transaksi terakhir · Oktober 2026</small>
-        <p class="d-flex justify-content-between mb-2">Gaji bulanan <span>+ Rp 15.000.000</span></p>
+    <article class="card border-0 rounded-4 mt-3 shadow">
+        <div class="card-body p-4 pb-2">
+            <h2 class="fs-5 fw-semibold mb-1">Riwayat Terakhir</h2>
+            <small class="d-block text-secondary mb-2">Transaksi terakhir · Oktober 2026</small>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex align-items-center gap-3 px-0 py-3">
+                    <i class="bi bi-arrow-down-left fs-5 lh-1 bg-success-subtle text-success rounded-circle p-2"></i>
+                    <span class="flex-grow-1 fw-medium">Gaji bulanan</span>
+                    <span class="fw-semibold text-success">+ Rp 15.000.000</span>
+                </li>
+            </ul>
+        </div>
     </article>
-</div>
+</main>
 
+<!-- Dialog tambah pemasukan / pengeluaran -->
 <dialog class="border-0 rounded-4 p-0 m-auto">
-    <form class="p-4">
-        <h3 id="dialog-title" class="h6 mb-3"></h3>
-
-        <label class="form-label w-100 text-secondary">
-            Keterangan
-            <input class="form-control" name="description" maxlength="40" required>
+    <form method="dialog" class="p-4">
+        <h3 class="fs-5 fw-semibold mb-3"></h3>
+        <label class="form-label w-100 text-secondary mb-3">Keterangan
+            <input class="form-control bg-body-tertiary border-0 mt-1" name="description" maxlength="40" required>
         </label>
-
-        <label class="form-label w-100 text-secondary">
-            Jumlah (Rp)
-            <input class="form-control" name="amount" inputmode="numeric"
-                   pattern="[1-9][0-9.]*" required>
+        <label class="form-label w-100 text-secondary">Jumlah (Rp)
+            <input class="form-control bg-body-tertiary border-0 mt-1" name="amount" inputmode="numeric" pattern="[1-9][0-9.]*" placeholder="Contoh: 1.000.000" required>
         </label>
 
         <div class="d-flex justify-content-end gap-2 mt-4">
-            <button id="batal" class="btn btn-light" type="button">Batal</button>
-            <button id="simpan" class="btn bg-primary text-white" type="button">Simpan</button>
+            <button type="button" id="batal" class="btn btn-light rounded-pill px-3">Batal</button>
+            <button class="btn bg-primary text-white rounded-pill px-4">Simpan</button>
         </div>
     </form>
 </dialog>

@@ -1,7 +1,7 @@
 {% extends "main.html" %}
 {% load static %}
 
-{% block title %}Login - U-Bank{% endblock %}
+{% block title %}Login | U-Bank{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'uapp/css/style.css' %}">
@@ -10,7 +10,6 @@
 {% block content %}
 <div class="auth-container">
     <div class="auth-card">
-        <h1>U-Bank</h1>
         <h2>Login</h2>
         <p class="subtitle">Masuk ke akun kamu</p>
 
@@ -32,7 +31,7 @@
 
         <p class="register-link">
             Belum punya akun?
-            <a href="{% url 'register' %}">Register</a>
+            <a href="register">Daftar Akun Baru</a>
         </p>
     </div>
 </div>
